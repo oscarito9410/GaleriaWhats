@@ -15,6 +15,27 @@ public class Categoria  implements Serializable{
     @SerializedName("nombre")
     @Expose
     private String nombre;
+    @SerializedName("portada")
+    private String portada;
+
+    @SerializedName("total")
+    private String total;
+
+    public String getTotal() {
+        return total;
+    }
+
+    public void setTotal(String total) {
+        this.total = total;
+    }
+
+    public String getPortada() {
+        return portada;
+    }
+
+    public void setPortada(String portada) {
+        this.portada = portada;
+    }
 
     public String getIdCategoria() {
         return idCategoria;

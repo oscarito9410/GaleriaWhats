@@ -1,22 +1,18 @@
 package com.oscar.galeriawhats.UI.Activities;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
 import com.oscar.galeriawhats.IO.CallBacks.CallBackCategoria;
-import com.oscar.galeriawhats.IO.Model.Constants;
+import com.oscar.galeriawhats.Utilerias.Constants;
 import com.oscar.galeriawhats.IO.Model.Response.Categoria;
 import com.oscar.galeriawhats.R;
 import com.oscar.galeriawhats.UI.Adapters.AdapterCategoria;
-import com.oscar.galeriawhats.UI.Adapters.AdapterGaleria;
 import com.oscar.galeriawhats.UI.CallBacks.ItemClickListener;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class CategoriasActivity extends BaseAppCompactActivity implements CallBackCategoria,ItemClickListener {
 
@@ -34,12 +30,12 @@ public class CategoriasActivity extends BaseAppCompactActivity implements CallBa
     @Override
     public void OnSuccess(ArrayList<Categoria> listCategorias) {
             if(!listCategorias.isEmpty()){
-                RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
-                adapterCategoria=new AdapterCategoria(listCategorias);
+                RecyclerView.LayoutManager layoutManager = new GridLayoutManager(this,2);
+                adapterCategoria=new AdapterCategoria(this,listCategorias);
                 recyclerViewCategoria.setLayoutManager(layoutManager);
                 recyclerViewCategoria.setAdapter(adapterCategoria);
                 recyclerViewCategoria.setHasFixedSize(true);
-                adapterCategoria.setMClickListener(this);
+                adapterCategoria.setItemClickListener(this);
             }
     }
     @Override

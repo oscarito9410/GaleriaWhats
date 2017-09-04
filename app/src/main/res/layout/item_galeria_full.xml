@@ -2,14 +2,16 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="wrap_content">
+     
      <com.facebook.shimmer.ShimmerFrameLayout
          android:id="@+id/shimmeerFrameLayout"
-         android:layout_width="160dp"
-         android:layout_height="160dp">
-     <ImageView
-         android:id="@+id/imageGaleria"
-         android:layout_width="160dp"
-         android:layout_height="160dp"
-         style="@style/imagenItemStyle"/>
+         android:layout_width="match_parent"
+         android:layout_height="250dp">
+          <ImageView
+              android:id="@+id/imageGaleria"
+              android:layout_width="match_parent"
+              android:layout_height="250dp"
+              style="@style/imagenItemStyle"/>
      </com.facebook.shimmer.ShimmerFrameLayout>
+
 </LinearLayout>

@@ -1,12 +1,19 @@
 package com.oscar.galeriawhats.IO.Model.Response;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
+import java.io.Serializable;
+
 /**
  * Created by oemy9 on 26/08/2017.
  */
 
-public class Imagen {
+public class Imagen implements Serializable {
 
         private String id_imagen;
+
+
 
         public String getIdImagen() { return this.id_imagen; }
 
@@ -29,5 +36,6 @@ public class Imagen {
         public String getIdCategoria() { return this.id_categoria; }
 
         public void setIdCategoria(String id_categoria) { this.id_categoria = id_categoria; }
+
 
 }

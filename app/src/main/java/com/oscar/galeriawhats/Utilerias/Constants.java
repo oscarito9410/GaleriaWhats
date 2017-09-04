@@ -1,4 +1,4 @@
-package com.oscar.galeriawhats.IO.Model;
+package com.oscar.galeriawhats.Utilerias;
 
 /**
  * Created by oemy9 on 22/08/2017.
@@ -19,5 +19,11 @@ public class Constants {
 
     /*EXTRAS*/
     public static final String SELECTED_CATEGORIA="SELECTED_CATEGORIA";
+    public static final String SELECTED_IMAGE_TRANSITION="SELECTED_IMAGE_TRANSITION";
+    public static final String SELECTED_IMAGEN="SELECTED_IMAGEN";
+
+    /*CODES DE PERMISO*/
+    public static final int PERMISO_REQUEST_WRITE_EXTERNAL=100;
+    public static final int PERMISO_REQUEST_WALLPAPER=110;
 
 }

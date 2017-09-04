@@ -1,5 +1,6 @@
 package com.oscar.galeriawhats.UI.Adapters;
 
+import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,7 +10,8 @@ import com.oscar.galeriawhats.IO.Model.Response.Categoria;
 import com.oscar.galeriawhats.R;
 import com.oscar.galeriawhats.UI.CallBacks.ItemClickListener;
 import com.oscar.galeriawhats.UI.ViewHolders.ViewHoderCategoria;
-import com.oscar.galeriawhats.UI.ViewHolders.ViewHolderGaleria;
+import com.oscar.galeriawhats.Utilerias.Utils;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -17,16 +19,20 @@ import java.util.ArrayList;
  * Created by oemy9 on 27/08/2017.
  */
 
-public class AdapterCategoria extends RecyclerView.Adapter<ViewHoderCategoria> {
+public class AdapterCategoria extends RecyclerView.Adapter<ViewHoderCategoria> implements IAdapterBase {
 
     private ItemClickListener clickListener;
     private ArrayList<Categoria>listCategorias;
+    private LayoutInflater layoutInflater;
+    private Context context;
 
-    public AdapterCategoria(ArrayList<Categoria>listCategorias){
+    public AdapterCategoria(Context context, ArrayList<Categoria>listCategorias){
         this.listCategorias=listCategorias;
+        this.context=context;
+        this.layoutInflater=LayoutInflater.from(context);
     }
 
-    public void setMClickListener(ItemClickListener clickListener) {
+    public void setItemClickListener(ItemClickListener clickListener) {
         this.clickListener = clickListener;
     }
 
@@ -39,8 +45,13 @@ public class AdapterCategoria extends RecyclerView.Adapter<ViewHoderCategoria> {
     }
     @Override
     public void onBindViewHolder(ViewHoderCategoria holder, final int position) {
-        holder.tvCategoria.setText(getItem(position).getNombre());
-        holder.tvCategoria.setOnClickListener(new View.OnClickListener() {
+        Categoria selectedCategoria=getItem(position);
+        holder.tvCategoria.setText(String.format("%s (%s)",selectedCategoria.getNombre(),selectedCategoria.getTotal()));
+        if(selectedCategoria.getPortada()!=null){
+            Picasso.with(context).load(Utils.getUrlGaleria(selectedCategoria.getPortada()))
+                    .into(holder.imageCategoria);
+        }
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(clickListener!=null){

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.oscar.galeriawhats.UI.Activities.DetalleActivity">
+
+    <ImageView
+        android:id="@+id/imagenDetalle"
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        style="@style/imagenItemStyle"
+        android:scaleType="fitXY"
+        />
+
+    <com.github.clans.fab.FloatingActionMenu
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_alignParentBottom="true">
+        
+        <com.github.clans.fab.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_action_share"
+            app:fab_size="mini"
+            app:fab_label="@string/compartir"
+            android:onClick="onCompartir"/>
+
+        <com.github.clans.fab.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_action_photo"
+            app:fab_size="mini"
+            app:fab_label="@string/fondo_pantalla"
+            android:onClick="onWallpaper"/>
+        
+    </com.github.clans.fab.FloatingActionMenu>
+
+</RelativeLayout>

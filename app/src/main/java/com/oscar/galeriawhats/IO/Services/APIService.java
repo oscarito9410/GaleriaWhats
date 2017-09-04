@@ -1,14 +1,10 @@
 package com.oscar.galeriawhats.IO.Services;
 
-import com.oscar.galeriawhats.IO.Model.Constants;
+import com.oscar.galeriawhats.Utilerias.Constants;
 import com.oscar.galeriawhats.IO.Model.Response.CategoriaResponse;
-import com.oscar.galeriawhats.IO.Model.Response.Imagen;
 import com.oscar.galeriawhats.IO.Model.Response.ImagenResponse;
 
 
-import java.util.List;
-
-import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Query;

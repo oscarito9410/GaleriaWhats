@@ -4,7 +4,7 @@ import android.content.Context;
 
 import com.oscar.galeriawhats.IO.CallBacks.CallBackCategoria;
 import com.oscar.galeriawhats.IO.CallBacks.CallBackImagen;
-import com.oscar.galeriawhats.IO.Model.Constants;
+import com.oscar.galeriawhats.Utilerias.Constants;
 import com.oscar.galeriawhats.IO.Model.Response.CategoriaResponse;
 import com.oscar.galeriawhats.IO.Model.Response.ImagenResponse;
 import com.oscar.galeriawhats.IO.Services.APIService;
